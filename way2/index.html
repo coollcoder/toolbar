@@ -4,12 +4,17 @@
         <meta charset="utf-8">
     </head>
     <body>
+    <!-- toolbar 定位好父容器，ps:position属性能灵活布局 -->
     <div class="toolbar">
       <a href="javascript:;" class="toolbar-item">
+      <!-- toolbar-btn设置溢出隐藏 -->
         <span class="toolbar-btn">
+          <!-- toolbar-icon设置图标字体大小宽高，ps：图标字体用法跟普通字体一样 -->
           <i class="toolbar-icon"></i>
+          <!-- 文字对齐居中，利用line-height和padding-top -->
           <span class="toolbar-text">公众<br/>账号</span>
         </span>
+        <!-- 利用background-image形式引入图片，用background-position控制图片位置，ps:可以使用gulp构建工具自动生成spirit图 -->
         <span class="toolbar-layer toolbar-layer-weixin"></span>
       </a> 
       <a href="javascript:;" class="toolbar-item">
