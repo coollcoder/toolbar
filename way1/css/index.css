@@ -1,3 +1,6 @@
+.toolbar-item, .toolbar-layer {
+  background-image: url("../img/toolbar.png"); }
+
 .toolbar {
   position: fixed;
   left: 50%;
@@ -9,7 +12,6 @@
   display: block;
   width: 52px;
   height: 52px;
-  background-image: url("../img/toolbar.png");
   background-repeat: no-repeat;
   margin-top: 1px;
   transition: background-position 1s; }
@@ -21,9 +23,9 @@
   background-position: 0 -798px; }
   .toolbar-item-weixin:hover {
     background-position: 0 -860px; }
-    .toolbar-item-weixin:hover .toolbar-layer {
-      height: 212px;
-      background-position: 0 0px; }
+  .toolbar-item-weixin .toolbar-layer {
+    height: 212px;
+    background-position: 0 0px; }
 
 .toolbar-item-feedback {
   background-position: 0 -426px; }
@@ -34,9 +36,9 @@
   background-position: 0 -550px; }
   .toolbar-item-app:hover {
     background-position: 0 -612px; }
-    .toolbar-item-app:hover .toolbar-layer {
-      height: 194px;
-      background-position: 0 -222px; }
+  .toolbar-item-app .toolbar-layer {
+    height: 194px;
+    background-position: 0 -222px; }
 
 .toolbar-item-top {
   background-position: 0 -674px; }
@@ -48,7 +50,6 @@
   right: 46px;
   width: 172px;
   bottom: -10px;
-  background-image: url("../img/toolbar.png");
   background-repeat: no-repeat;
   opacity: 0;
   transform-origin: 95% 95%;

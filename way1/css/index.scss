@@ -1,15 +1,16 @@
 // 这里声明了一个函数（一般有结构化的css样式可声明为一个函数便以复用）
 // 该函数实现的效果是悬停 background的改变
 @mixin toolbar-item($pos,$hoverPos){
-   background-position: 0 $pos;
+   background-position: 0 $$pos;
   &:hover {
-    background-position: 0 $$hoverPos;
+    background-position: 0 $hoverPos;
   }  
 
 }
 $toolbar-size: 52px; //将经常变化的值设置为变量，方便修改
-.toolbar-item .toolbar-item{
-background-image: url("../img/toolbar.png");
+//在sass中分组用逗号
+.toolbar-item,.toolbar-layer{
+  background-image: url('../img/toolbar.png');
 }
 .toolbar{
   position: fixed;
@@ -64,12 +65,11 @@ background-image: url("../img/toolbar.png");
  
   @include toolbar-item(-674px,-736px);
 }
-.toolbar-item{
+.toolbar-layer{
   position: absolute;
   right: $toolbar-size - 6;//6没有px
   width: 172px;
   bottom:-10px;
-  
   background-repeat: no-repeat;
   opacity: 0;
   //transform 的变化基准点默认是中心
