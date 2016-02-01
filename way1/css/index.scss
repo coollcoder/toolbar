@@ -1,4 +1,16 @@
+// 这里声明了一个函数（一般有结构化的css样式可声明为一个函数便以复用）
+// 该函数实现的效果是悬停 background的改变
+@mixin toolbar-item($pos,$hoverPos){
+   background-position: 0 $pos;
+  &:hover {
+    background-position: 0 $$hoverPos;
+  }  
+
+}
 $toolbar-size: 52px; //将经常变化的值设置为变量，方便修改
+.toolbar-item .toolbar-item{
+background-image: url("../img/toolbar.png");
+}
 .toolbar{
   position: fixed;
   left: 50%;
@@ -13,7 +25,7 @@ $toolbar-size: 52px; //将经常变化的值设置为变量，方便修改
   width: $toolbar-size;
   height: $toolbar-size;
   //background-image默认是repeat的
-  background-image: url("../img/toolbar.png");
+  
   background-repeat: no-repeat;
   margin-top: 1px;
   transition: background-position 1s;
@@ -28,46 +40,36 @@ $toolbar-size: 52px; //将经常变化的值设置为变量，方便修改
 }
 .toolbar-item-weixin{
   // background-position 控制着image
-  background-position: 0 -798px;
-
-  &:hover {
-    background-position: 0 -860px;
-    .toolbar-layer {
+  @include toolbar-item(-798px,-860px);
+  .toolbar-layer {
       height: 212px;
       background-position: 0 0px;
-    }
   }
 }
 .toolbar-item-feedback{
-  background-position: 0 -426px;
-  &:hover {
-    background-position: 0 -488px;
-  }  
+ 
+  @include toolbar-item(-426px,-488px);
 
 }
 .toolbar-item-app{
-  background-position: 0 -550px;
-  &:hover {
-    background-position: 0 -612px;
+ 
+  @include toolbar-item(-550px,-612px);
   .toolbar-layer {
     height: 194px;
     background-position: 0 -222px;
   }
-  }  
 
 }
 .toolbar-item-top{
-  background-position: 0 -674px;
-  &:hover {
-    background-position: 0 -736px;
-  }  
+ 
+  @include toolbar-item(-674px,-736px);
 }
-.toolbar-layer{
+.toolbar-item{
   position: absolute;
   right: $toolbar-size - 6;//6没有px
   width: 172px;
   bottom:-10px;
-  background-image: url('../img/toolbar.png');
+  
   background-repeat: no-repeat;
   opacity: 0;
   //transform 的变化基准点默认是中心
